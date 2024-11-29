@@ -99,20 +99,22 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | student 1          | student 2          | student 3    | student 4        |
+  | ---                | ---                | ---          | ---              |
+  | Het font krijg ik  | tips over hoe ik     feedback over   | en ik dit    | en dan ik dat    |
+  | nog niet in mijn   | het logo kan gaan  | de htmln     | dit wil ik zeker |
+  | css, hier wil ik     animeren
+    hulp bij           | ...                | ...          | ...              |
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Voor het logo moet ik even advies vragen aan Sanne. Jason en Jesse denken dat dit svg's zijn die geanimeerd worden.  
+  - Voor het menu werd aangeraden een header te gebruiken, op mobiel een position: absolute onder pagina en voor desktop naar boven op de pagina.
+  - Het inladen van het font is nu gelukt gelukkig.
+  - Ik heb buttons waar een h3 om heen zit, de h3 is niet nodig.
+  - De alt teksten herhalen eigenlijk de titles, dus de alt-teksten zijn onnodig.
 
 </details>
 

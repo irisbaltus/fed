@@ -5,24 +5,61 @@
   box-sizing:border-box;  
 }
 
-
-
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
 	/* startje */
 	--color-text:#111;
-	--color-background:#eee;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-weight: 400;
+	--color-background:#fff;
+	--color-buttonbackground:#fff;
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'Calibre', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 300;
 	line-height: 1;
 }
+@font-face {
+	font-family: 'Calibre';
+	src: url(../fonts/calibre-regular.woff2);
+}
 
+@font-face {
+	font-family: 'Calibre Medium';
+	src: url(../fonts/calibre-medium.woff2);
+}
 
+@font-face {
+	font-family: 'Melkweg';
+	src: url(../fonts/melkweg-regular.woff2);
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+  } 
+   /* bron: https://www.a11yproject.com/posts/how-to-hide-content/ */
+
+   body{
+	/* width: 20em; */
+	max-width: 100vw;
+	/* padding: 0 1em 0 1em; */
+	background-color: var(--color-background);
+	
+   }
+
+* {
+	font-family: 'Calibre', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-weight: 300;
+
+}
 
 
 
@@ -34,19 +71,50 @@
 h1{
 	text-transform: uppercase;
 	display: flex;
-    justify-content: center;
-	font-size: 4em;
-	
+    justify-content:space-between;
+	font-size: 4.2em;
+	/* font-weight: 300; */
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	width: 100%;
 }
+header:first-of-type{
+	padding: 1em;
+}
+
+ /* code voor de header */
+/* header nav{
+	/* display: grid;
+	grid-template-rows:repeat(7, 1fr);
+} */
+ 
+
 header ul{
 	display: flex;
-	max-width: 45ch;
+	flex-direction: row;
+	gap: .5em;
+	flex-wrap: wrap;
+	/* width: 100%; */
 }
+	/* display: grid; */
+	/* grid-template-columns:repeat(6, 1fr);
+} */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: repeat(3, 1fr);
+} */
+	
+header ul:nth-of-type(2) li:first-of-type{
+	grid-column: 1 / 3;
+}
+header ul:nth-of-type(2) li:nth-of-type(6){
+	grid-row: 2 / 4;
+	grid-column: 3 / 5;
+}
+
 header li {
 	text-transform: uppercase;
 	list-style-type: none;
-	grid-template-columns: repeat( auto-fit, minmax(16em, 1fr) );
-	
+	/* grid-template-columns: repeat( auto-fit, minmax(16em, 1fr) );
+	 */
 	
 }
 header li, header a {
@@ -55,19 +123,278 @@ header li, header a {
 
 }
 header a {
-	text-decoration: underline;
+	text-decoration: underline .06em;
+	/* border-bottom: .005em solid #111; */
 	color: #111;
-	font-weight: 400;
-	gap: .5em;
-
-}
-li img{
-	width:1em;
-}
-/* ul:nth-of-type(3) li{
-	text-transform: lowercase;
-} */
-/* ul:nth-of-type(2) li{
+	justify-content: space-between;
 	display: flex;
 
+}
+
+
+h2, h3, h4, li p, article p {
+	text-transform: uppercase;
+}
+section li {
+	list-style-type: none;
+}
+
+/* code eerste sectie */
+
+section:first-of-type {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 1em;
+	row-gap: 4em;
+	background-color: var (var(--color-background));
+	position: relative;
+	padding: 2em 1em 4em 1em;
+	
+	/* width: 100%; */
+	/* grid-template-columns: repeat( auto-fit, minmax(4, 1fr) ); */
+}
+
+section:first-of-type article{
+	display: grid;
+	align-content: center;
+	z-index: 10;
+	
+}
+section:first-of-type a{
+	text-decoration: none;
+	color:#eee;
+	display: grid;
+	
+}
+section:first-of-type article img{
+	order: -10;
+	width: 9em;
+}
+section:first-of-type article p{
+	order: -5;
+	font-weight: 300;
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+	
+}
+section:first-of-type article h3{
+	font-weight: 300;
+	
+}
+
+section:nth-of-type(1) article:nth-of-type(1), 
+section:nth-of-type(1) article:nth-of-type(4),
+section:nth-of-type(1) article:nth-of-type(7), 
+section:nth-of-type(1) article:nth-of-type(10){
+	grid-column: 1 / 3;
+}
+/* begint bij het begin van colom 1 en eindigt bij het begin van kolom 3 */
+
+section:nth-of-type(1) article:nth-of-type(2),
+section:nth-of-type(1) article:nth-of-type(5),
+section:nth-of-type(1) article:nth-of-type(8){
+	grid-column: 3 / 5;
+}
+section:nth-of-type(1) article:nth-of-type(3),
+section:nth-of-type(1) article:nth-of-type(6),
+section:nth-of-type(1) article:nth-of-type(9){
+	grid-column: 2 / 4;
+}
+
+/* backgound image grid */
+
+section:first-of-type ul{
+	display: grid;
+	z-index: 5;
+	position: absolute;
+	row-gap: 8em;
+	padding-top: 9em;
+}
+section:first-of-type ul img{
+	width: 8.5em;
+	opacity: 50%;
+}
+
+section:first-of-type li:first-of-type,
+section:first-of-type li:nth-of-type(4){
+	grid-column: 1 / 3;
+}
+section:first-of-type li:nth-of-type(2),
+section:first-of-type li:nth-of-type(5){
+	grid-column: 2 / 4;
+}
+section:first-of-type li:nth-of-type(3),
+section:first-of-type li:nth-of-type(6){
+	grid-column: 3 / 5;
+}
+
+/* codes sectie twee */
+
+section:nth-of-type(2) ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	gap: 1em;
+}
+section:nth-of-type(2) ul p:first-of-type{
+	color: rgb(167, 169, 172);
+	font-size: .875rem;
+	padding-bottom: 1em;
+	/* row-gap: 1em; */
+}
+
+section:nth-of-type(2) ul p:nth-of-type(2){
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	justify-self: end;
+	text-align: right;
+	font-size: .875rem;
+	max-width: 9ch;
+	row-gap: 1em;
+	
+}
+section:nth-of-type(2) li{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 1em;
+	border-bottom: .07em solid rgb(209, 211, 212);
+}
+section:nth-of-type(2) ul :nth-of-type(2){
+	order: -5;
+	/* display: none; */
+}
+/* section:nth-of-type(2) ul :nth-of-type(2).active{
+	display: grid;
 } */
+section:nth-of-type(2) ul h4{
+	order: -10;
+	font-size: 1rem;
+	width: 160%;
+}
+section:nth-of-type(2){
+	padding: 2em 1em 1em 1em;
+}
+section:nth-of-type(2) h2{
+	font-size: 2.625rem;
+	font-family: 'Melkweg';
+}
+button{
+	text-decoration: none;
+	border: none;
+	background-color: #eee;
+	text-transform: uppercase;
+	padding-bottom: 1em;
+
+}
+section:nth-of-type(2) header{
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 1.4em;
+	border-bottom: .1em solid #111;
+	margin-bottom: 1em;
+}
+section:nth-of-type(2) h2{
+	grid-column: 1 / -1;
+	
+}
+
+/* codes sectie 3 */
+
+section:nth-of-type(3){
+	padding: 2em 1em 0 1em;
+}
+section:nth-of-type(3) a{
+	display: grid;
+	order: -10;
+}
+
+section:nth-of-type(3) li{
+	display: grid;
+}
+section:nth-of-type(3) img{
+	width: 100vw;
+}
+section:nth-of-type(3) h2{
+	font-size: .875rem;
+	border-bottom: .1em solid #111;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	font-weight: 700;
+}
+section:nth-of-type(3) h3{
+	font-size: 1.75rem;
+	font-weight: 300;
+	line-height: 1;
+	padding-bottom: 1.5em;
+}
+section:nth-of-type(3) p{
+	font-size: 1.125rem;
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	order: -5;
+	padding-top: .8em;
+}
+
+/* codes sectie 4 */
+
+section:nth-of-type(4){
+	padding: 1em;
+	border-bottom: .1em solid #111;
+	border-top: .1em solid #111;
+	/* display: flex; */
+	flex-direction: row;
+	
+}
+
+section:nth-of-type(4) a{
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+}
+section:nth-of-type(4) h2{
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 3.4rem;
+	color: #111;
+}
+
+section:nth-of-type(4) img{
+	height: 3em;
+	
+}
+
+
+/* codes sectie 5 */
+
+section:nth-of-type(5){
+	padding: 2.5em 1em 3em 1em;
+	display: grid;
+	gap: 1.5em;
+}
+section:nth-of-type(5) h2{
+	font-family: 'Melkweg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 3.3rem;
+
+}
+section:nth-of-type(5) > img{
+	width: 100%;
+	order: -10;
+}
+section:nth-of-type(5) p{
+	line-height: 1.35rem;
+	font-size: 1.125rem;
+	font-weight: 300;
+	/* width: 100vw; */
+}
+section:nth-of-type(5) a{
+	text-decoration: none;
+	color: #111;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1em;
+
+}
+section:nth-of-type(5) a img{
+	height: 1em;
+	/* width: 10vw; */
+}
